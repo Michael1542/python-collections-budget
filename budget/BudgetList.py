@@ -28,7 +28,8 @@ class BudgetList:
 
     def __next__(self):
         try:
-            return 
+            return self.iter_e.__next__()
+
         except StopIteration as stop:
             return self.iter_o.__next__()
 
@@ -44,7 +45,7 @@ def main():
     for entry in myBudgetList:
         print(entry)
 
-    fix, ax = plt.subplots()
+    fig, ax = plt.subplots()
 
     labels = ['Expenses','Overages', 'Budget']
     values = [myBudgetList.sum_expenses, myBudgetList.sum_overages, myBudgetList.budget]
